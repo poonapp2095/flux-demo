@@ -13,15 +13,15 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
-values:
-  image:
-    registry: docker.io
-    repository: bitnami/nginx
-    tag: 1.25.3-debian-11-r6
-  replicaCount: 2
-  service:
-    type: NodePort
-    port: 80
-    nodePort: 30080
+  values:
+    image:
+      registry: docker.io
+      repository: bitnami/nginx
+      tag: 1.25.3-debian-11-r6
+    replicaCount: 2
+    service:
+      type: NodePort
+      port: 80
+      nodePort: 30080
 
 
