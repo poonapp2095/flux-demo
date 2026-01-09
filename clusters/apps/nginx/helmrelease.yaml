@@ -22,6 +22,5 @@ spec:
     service:
       type: NodePort
       port: 80
-      nodePort: 30080             # you can access via node-ip:30080
-    # <- optional, choose any port 30000-32767
+      nodePort: 30080
 
