@@ -19,3 +19,8 @@ spec:
       repository: library/nginx
       tag: "1.25.3"
     replicaCount: 2
+    service:
+      type: NodePort        # <- change from LoadBalancer to NodePort
+      port: 80
+      nodePort: 30080       # <- optional, choose any port 30000-32767
+
