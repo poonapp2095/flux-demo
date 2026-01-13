@@ -7,12 +7,15 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: nginx-ingress
+      chart: nginx
       sourceRef:
         kind: HelmRepository
-        name: nginx-stable
+        name: stable
         namespace: flux-system
   values:
-    controller:
-      service:
-        type: NodePort
+    image:
+      repository: nginx
+      tag: "1.25"
+    service:
+      type: NodePort
+      nodePort: 30080
