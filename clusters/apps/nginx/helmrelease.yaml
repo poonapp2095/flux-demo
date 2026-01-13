@@ -4,19 +4,22 @@ metadata:
   name: nginx
   namespace: default
 spec:
-  interval: 1m
+  interval: 5m
   chart:
     spec:
       chart: nginx
+      version: "15.5.0"
       sourceRef:
         kind: HelmRepository
-        name: stable
+        name: bitnami        # ✅ MUST be bitnami
         namespace: flux-system
   values:
+    replicaCount: 1
     image:
       repository: nginx
-      tag: "1.25"
+      tag: "1.25.3"
     service:
       type: NodePort
       nodePort: 30080
+
 
